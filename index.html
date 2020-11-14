@@ -15,7 +15,13 @@
         <th width="20%">O</th>
       </tr>
       <tr>
-        <td id="square0" onclick="changeColor(this)">&nbsp;</td>
+        <td
+          id="square0"
+          onclick="changeColor(this)"
+          style="background-color:''"
+        >
+          &nbsp;
+        </td>
         <td id="square1" onclick="changeColor(this)">&nbsp;</td>
         <td id="square2" onclick="changeColor(this)">&nbsp;</td>
         <td id="square3" onclick="changeColor(this)">&nbsp;</td>
@@ -60,7 +66,6 @@
       function changeColor(obj) {
         console.log(obj);
         let newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
-        console.log(newColor);
         let rowObj = obj.parentElement;
         for (i = 0; i < rowObj.childNodes.length; i++) {
           rowObj.childNodes[i].style.backgroundColor = newColor;
