@@ -67,11 +67,3 @@ function anotherCard() {
   newCard();
   return false;
 }
-
-function changeColor(obj) {
-  newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
-  rowObj = obj.parentElement;
-  for (i = 0; i < rowObj.childNodes.length; i++) {
-    rowObj.childNodes[i].style.backgroundColor = newColor;
-  }
-}
