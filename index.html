@@ -60,6 +60,7 @@
       function changeColor(obj) {
         console.log(obj);
         let newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
+        console.log(newColor);
         let rowObj = obj.parentElement;
         for (i = 0; i < rowObj.childNodes.length; i++) {
           rowObj.childNodes[i].style.backgroundColor = newColor;
