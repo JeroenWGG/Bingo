@@ -1,76 +1,79 @@
-<html>
-  <head>
-    <title>Make Your Own Bingo Card</title>
-    <link rel="stylesheet" rev="stylesheet" href="bingo-card.css" />
-    <script type="text/javascript" src="bingo-card.js"></script>
-  </head>
-  <body>
-    <h1>Genereer een BINGO kaart voor de familiebingo!</h1>
-    <table>
-      <tr>
-        <th width="20%">B</th>
-        <th width="20%">I</th>
-        <th width="20%">N</th>
-        <th width="20%">G</th>
-        <th width="20%">O</th>
-      </tr>
-      <tr>
-        <td
-          id="square0"
-          onclick="changeColor(this)"
-          style="background-color:''"
-        >
-          &nbsp;
-        </td>
-        <td id="square1" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square2" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square3" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square4" onclick="changeColor(this)">&nbsp;</td>
-      </tr>
-      <tr>
-        <td id="square5" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square6" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square7" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square8" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square9" onclick="changeColor(this)">&nbsp;</td>
-      </tr>
-      <tr>
-        <td id="square10" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square11" onclick="changeColor(this)">&nbsp;</td>
-        <td id="free">Free</td>
-        <td id="square12" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square13" onclick="changeColor(this)">&nbsp;</td>
-      </tr>
-      <tr>
-        <td id="square14" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square15" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square16" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square17" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square18" onclick="changeColor(this)">&nbsp;</td>
-      </tr>
-      <tr>
-        <td id="square19" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square20" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square21" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square22" onclick="changeColor(this)">&nbsp;</td>
-        <td id="square23" onclick="changeColor(this)">&nbsp;</td>
-      </tr>
-    </table>
-
-    <p>
-      <a href="script.html" id="reload">Klik hier</a> om een nieuwe kaart te
-      maken.
-    </p>
-    <p>Gemaakt door Jeroen Wiersma</p>
-    <script>
-      function changeColor(obj) {
-        console.log(obj);
-        let newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
-        let rowObj = obj.parentElement;
-        for (i = 0; i < rowObj.childNodes.length; i++) {
-          rowObj.childNodes[i].style.backgroundColor = newColor;
-        }
-      }
-    </script>
-  </body>
+<!--Noah Peneycad 
+    CISC282 Assignment #4
+    April 10, 2017-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bingo</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel='shortcut icon' type='image/x-icon' href='images/favicon.ico'>
+        <script src="scripts/bingo.js"></script>
+    </head>
+    <body onload="init()">
+        <div id="bingo-content">
+            <table id="bingo-card">
+                <tr>
+                    <th class="header">B</th>
+                    <th class="header">I</th>
+                    <th class="header">N</th>
+                    <th class="header">G</th>
+                    <th class="header">O</th>
+                </tr>
+                <tr>
+                    <td><input id="sq0" class="square" type="button" value="&nbsp;" onclick="markSquare('sq0')"></td>
+                    <td><input id="sq1" class="square" type="button" value="&nbsp;" onclick="markSquare('sq1')"></td>
+                    <td><input id="sq2" class="square" type="button" value="&nbsp;" onclick="markSquare('sq2')"></td>
+                    <td><input id="sq3" class="square" type="button" value="&nbsp;" onclick="markSquare('sq3')"></td>
+                    <td><input id="sq4" class="square" type="button" value="&nbsp;" onclick="markSquare('sq4')"></td>
+                </tr>
+                <tr>
+                    <td><input id="sq5" class="square" type="button" value="&nbsp;" onclick="markSquare('sq5')"></td>
+                    <td><input id="sq6" class="square" type="button" value="&nbsp;" onclick="markSquare('sq6')"></td>
+                    <td><input id="sq7" class="square" type="button" value="&nbsp;" onclick="markSquare('sq7')"></td>
+                    <td><input id="sq8" class="square" type="button" value="&nbsp;" onclick="markSquare('sq8')"></td>
+                    <td><input id="sq9" class="square" type="button" value="&nbsp;" onclick="markSquare('sq9')"></td>
+                </tr>
+                <tr>
+                    <td><input id="sq10" class="square" type="button" value="&nbsp;" onclick="markSquare('sq10')"></td>
+                    <td><input id="sq11" class="square" type="button" value="&nbsp;" onclick="markSquare('sq11')"></td>
+                    <td><input id="sq12" class="square" type="button" value="FREE" onclick="markSquare('sq12')"></td>
+                    <td><input id="sq13" class="square" type="button" value="&nbsp;" onclick="markSquare('sq13')"></td>
+                    <td><input id="sq14" class="square" type="button" value="&nbsp;" onclick="markSquare('sq14')"></td>
+                </tr>
+                <tr>
+                    <td><input id="sq15" class="square" type="button" value="&nbsp;" onclick="markSquare('sq15')"></td>
+                    <td><input id="sq16" class="square" type="button" value="&nbsp;" onclick="markSquare('sq16')"></td>
+                    <td><input id="sq17" class="square" type="button" value="&nbsp;" onclick="markSquare('sq17')"></td>
+                    <td><input id="sq18" class="square" type="button" value="&nbsp;" onclick="markSquare('sq18')"></td>
+                    <td><input id="sq19" class="square" type="button" value="&nbsp;" onclick="markSquare('sq19')"></td>
+                </tr>
+                <tr>
+                    <td><input id="sq20" class="square" type="button" value="&nbsp;" onclick="markSquare('sq20')"></td>
+                    <td><input id="sq21" class="square" type="button" value="&nbsp;" onclick="markSquare('sq21')"></td>
+                    <td><input id="sq22" class="square" type="button" value="&nbsp;" onclick="markSquare('sq22')"></td>
+                    <td><input id="sq23" class="square" type="button" value="&nbsp;" onclick="markSquare('sq23')"></td>
+                    <td><input id="sq24" class="square" type="button" value="&nbsp;" onclick="markSquare('sq24')"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="buttons">
+            <div id="goals">
+                <p>Goals: 
+                    <input type="button" class="button" name="line" id="bLine" value="Line" onclick="lineBingo()">
+                    <input type="button" class="button" name="full" id="bFull" value="Full Card" onclick="fullBingo()">
+                </p>
+            </div>
+            <div id="actions">
+                <p>Actions: 
+                    <input type="button" class="button" name="call" id="bCall" value="Call" onclick="callNumber()">
+                    <input type="button" class="button" name="bingo" id="bBingo" value="Bingo" onclick="checkForBingo()">
+                </p>
+            </div>
+            <p>Current Call: <p id="currentCall">&nbsp;</p></p>
+            <p>Called Numbers: </p>
+            <p id="calledNums">None</p>
+        </div>
+        <p><a href="#" onclick="generateAnotherCard()">Click here</a> to generate a new card</p>
+    </body>
 </html>
