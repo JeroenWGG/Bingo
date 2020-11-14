@@ -58,6 +58,7 @@
     <p>Gemaakt door Jeroen Wiersma</p>
     <script>
       function changeColor(obj) {
+        console.log(obj);
         newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
         rowObj = obj.parentElement;
         for (i = 0; i < rowObj.childNodes.length; i++) {
