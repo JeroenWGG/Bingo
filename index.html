@@ -3,15 +3,6 @@
     <title>Make Your Own Bingo Card</title>
     <link rel="stylesheet" rev="stylesheet" href="bingo-card.css" />
     <script type="text/javascript" src="bingo-card.js"></script>
-    <script>
-      function changeColor(obj) {
-        newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
-        rowObj = obj.parentElement;
-        for (i = 0; i < rowObj.childNodes.length; i++) {
-          rowObj.childNodes[i].style.backgroundColor = newColor;
-        }
-      }
-    </script>
   </head>
   <body>
     <h1>Genereer een BINGO kaart voor de familiebingo!</h1>
@@ -65,5 +56,14 @@
       maken.
     </p>
     <p>Gemaakt door Jeroen Wiersma</p>
+    <script>
+      function changeColor(obj) {
+        newColor = obj.style.backgroundColor == "" ? "#DDDDDD" : "";
+        rowObj = obj.parentElement;
+        for (i = 0; i < rowObj.childNodes.length; i++) {
+          rowObj.childNodes[i].style.backgroundColor = newColor;
+        }
+      }
+    </script>
   </body>
 </html>
