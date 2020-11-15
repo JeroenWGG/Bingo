@@ -79,7 +79,6 @@ function toggleColor(evt) {
   } else {
     thisSquare.className = "";
   }
-  checkWin();
 }
 
 function checkWin() {
